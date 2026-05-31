@@ -1,0 +1,8 @@
+ticket_data = f"{username}-{source}-{destination}"
+
+img = qrcode.make(ticket_data)
+
+if not os.path.exists("static/images"):
+    os.makedirs("static/images")
+
+img.save("static/images/ticket.png")
